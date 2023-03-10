@@ -1,0 +1,1 @@
+module.exports = 'CUSTOMER_PRIVATE_KEY'
