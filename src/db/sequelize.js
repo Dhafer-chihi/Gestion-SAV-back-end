@@ -2,10 +2,13 @@ const {Sequelize ,  DataTypes} = require('sequelize')
 const ClientModel = require('../models/client')
 const ProductModel = require('../models/product')
 const UserModel = require('../models/user')
+const ArticleModel = require('../models/article')
 const bcrypt = require('bcrypt')
+
 
 const products = require('./product')
 const clients = require('./client')
+const articles = require('./article')
 
 
 
@@ -30,10 +33,12 @@ const sequelize = new Sequelize(
 const Client = ClientModel(sequelize , DataTypes)
 const Product = ProductModel(sequelize , DataTypes)
 const User = UserModel(sequelize , DataTypes )
-
+const Article = ArticleModel(sequelize , DataTypes)
 
 const initDb = ()=>{
     return sequelize.sync({force : true}).then(_ => {
+
+        
         clients.map(client=>{
             Client.create({
                 
@@ -59,6 +64,15 @@ const initDb = ()=>{
 
         }),
 
+        articles.map(article=>{
+            Article.create({
+                reference : article.reference , 
+                nom : article.nom ,
+                description : article.description 
+
+            }).then(article => console.log(article.toJSON()))
+        }),
+
 
         bcrypt.hash('user' , 10)
             .then(hash=> User.create({ username : 'user',password : hash}))
@@ -72,8 +86,10 @@ const initDb = ()=>{
 }
 Client.hasMany(Product);
 
+
+
 // l'exportation de module pour l'utiliser dans toute l'application 
 module.exports = {
-    initDb , Client , Product , User
+    initDb , Client , Product , User , Article
 }
 

@@ -53,6 +53,8 @@ require('./src/routes/product/createProduct')(app)
 require('./src/routes/product/updateProduct')(app)
 
 //Nos points de terminison de l'article
+require('./src/routes/article/findAllArticles')(app)
+require('./src/routes/article/findArticleByPk')(app)
 
 //Nos points de terminison de l'ulilisateur 
 

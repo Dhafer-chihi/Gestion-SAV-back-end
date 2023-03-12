@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "An First awesome API Rest to handle my application",
   "main": "app.js",
+
+  "engines": {
+    "node" : "16.x"
+  },
   "scripts": {
     "start": "NODE_ENV=production node app.js",
     "dev": "NODE_ENV=developement nodemon app.js"
