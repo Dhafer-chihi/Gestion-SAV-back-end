@@ -31,7 +31,7 @@ app
 sequelize.initDb()
 
 app.get('/', (req, res)=>{
-    res.json('Hello, Heroku !👋')
+    res.json('Hello, Vercel !👋')
 })
 
 //Nos points de terminison de client

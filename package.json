@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "NODE_ENV=production node index.js",
-    "dev": "NODE_ENV=developement nodemon index.js"
+    "dev": "NODE_ENV=developement nodemone index.js"
   },
   "author": "dhafer",
   "license": "ISC",
