@@ -20,7 +20,7 @@ const sequelize = new Sequelize(
     '',
     {
         host : 'localhost',
-        dialect : 'mysql2',
+        dialect : 'mysql',
         dialectOptions : {
             timezone : 'Etc/GMT-2'
         },
